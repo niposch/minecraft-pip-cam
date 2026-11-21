@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+issueTrackerURL="https://github.com/niposch/minecraft-pip-cam/issues"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+displayURL="https://github.com/niposch/minecraft-pip-cam"
+authors="niposch"
+# Client-only: servers do not need this mod and it must not block joining
+displayTest="IGNORE_ALL_VERSION"
+description='''
+Client-side picture-in-picture second camera for Minecraft 1.21.1 (NeoForge).
+Pin an external camera view in a customizable HUD window while continuing to play and build normally in first person.
+Works standalone with zero required mod dependencies, with built-in compatibility for Sodium, Iris shaders, Distant Horizons, Create/Flywheel/Colorwheel, Veil/Sable, and Create Deep Seas.
+'''
+
+[[mixins]]
+config="pipcam.mixins.json"
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="${neo_version_range}"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="CLIENT"
